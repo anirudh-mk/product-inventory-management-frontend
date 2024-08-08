@@ -1,0 +1,51 @@
+.body {
+    display: flex;
+    width: calc(100% - 32px);
+}
+
+.sidebar {
+    position: fixed;
+    width: calc(250px - 32px);
+    height: calc(100vh - 32px);
+    padding: 16px;
+    border-right: 0.1px solid rgb(197, 197, 197);
+    background-color: white;
+}
+
+.headding {
+    padding-bottom: 16px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 94px);
+}
+
+.topButtonContainer {
+    width: calc(100% - 32px);
+}
+
+.bottomButtonContainer {
+    width: calc(100% - 32px);
+}
+
+.children {
+    padding-left: 250px;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: rgb(111, 111, 111);
+    cursor: pointer;
+}
+
+active-link {
+    color: #751515;
+}
