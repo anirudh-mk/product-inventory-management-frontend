@@ -8,7 +8,7 @@ function LoginScreen() {
 
     const handleLogin = (event) => {
         event.preventDefault();
-        navigate('/dashboard')
+        navigate('/dashboard/products')
     }
 
     return (

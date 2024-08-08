@@ -1,7 +1,7 @@
-import React, { Children } from "react";
+import React from "react";
 import style from "../style/sidebar.module.css";
 import IconButton from "./IconButton";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Sidebar({ children }) {
     return (
@@ -12,7 +12,7 @@ function Sidebar({ children }) {
                 </div>
                 <div className={style.buttonContainer}>
                     <div className={style.topButtonContainer}>
-                        <NavLink to={"products"} activeClassName="active-link">
+                        <NavLink to={"products"}>
                             <IconButton title="Products" />
                         </NavLink>
                     </div>
