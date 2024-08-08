@@ -1,0 +1,14 @@
+.productCard {
+    width: calc(100% - 40px);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.productCard:hover {
+    cursor: pointer;
+}
