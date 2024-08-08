@@ -1,0 +1,35 @@
+.createContainer {
+    padding-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.topContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.option {
+    display: flex;
+    gap: 10px;
+}
+
+.option:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+}
+
+.button {
+    margin-top: 20px;
+}
+
+.variant {
+    padding-top: 20px;
+}
