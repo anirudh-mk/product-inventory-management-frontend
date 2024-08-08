@@ -12,3 +12,17 @@
 .productCard:hover {
     cursor: pointer;
 }
+
+.createButton {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: tomato;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import style from '../style/productScreen.module.css'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 function ProductScreen() {
 
@@ -34,6 +36,9 @@ function ProductScreen() {
                     </div>
                 )
             }
+            <div className={style.createButton}>
+                <FontAwesomeIcon icon={faPlus} />
+            </div>
         </div>
     )
 }
