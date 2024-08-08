@@ -21,6 +21,14 @@ h2 {
     font-style: normal;
 }
 
+h3 {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
 p {
     padding: 0px;
     margin: 0px;

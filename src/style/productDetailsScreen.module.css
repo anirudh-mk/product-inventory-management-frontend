@@ -1,0 +1,43 @@
+.topContainer {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.topContainer img {
+    width: 250px;
+    height: 250px;
+}
+
+.topContainer p {
+    padding: 5px;
+}
+
+.card {
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bottomContainer {
+    display: flex;
+    gap: 20px;
+}
+
+.createCard {
+    box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.createCard:hover {
+    cursor: pointer;
+}
