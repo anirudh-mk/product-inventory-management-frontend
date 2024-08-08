@@ -36,7 +36,7 @@ function ProductScreen() {
                     </div>
                 )
             }
-            <div className={style.createButton}>
+            <div className={style.createButton} onClick={() => navigate('/dashboard/products/create')}>
                 <FontAwesomeIcon icon={faPlus} />
             </div>
         </div>
