@@ -109,7 +109,7 @@ const ProductCreateScreen = () => {
         const accessToken = localStorage.getItem('accessToken');
 
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/v1/product/', jsonProduct, {
+            const response = await axios.post(`${import.meta.env.VITE_SERVER}/product/`, jsonProduct, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${accessToken}`

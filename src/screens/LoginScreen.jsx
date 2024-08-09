@@ -11,7 +11,7 @@ function LoginScreen() {
     const handleLogin = async (event) => {
         event.preventDefault();
 
-        axios.post('http://127.0.0.1:8000/api/v1/user/login/', {
+        axios.post(`${import.meta.env.VITE_SERVER}/user/login/`, {
             username: username,
             password: password
         })
@@ -26,7 +26,6 @@ function LoginScreen() {
                 setError(error.response.data)
             });
     }
-
     return (
         <div className={style.loginContainer}>
             <div className={style.loginCard}>

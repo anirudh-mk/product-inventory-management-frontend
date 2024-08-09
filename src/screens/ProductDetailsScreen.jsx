@@ -15,7 +15,7 @@ function ProductDetailsScreen() {
 
     useEffect(() => {
         const accessToken = localStorage.getItem('accessToken');
-        axios.get(`http://127.0.0.1:8000/api/v1/product/${id}/`, {
+        axios.get(`${import.meta.env.VITE_SERVER}/product/${id}/`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
             }

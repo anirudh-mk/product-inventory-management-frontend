@@ -38,7 +38,7 @@ function StockCreateScreen() {
         try {
             const accessToken = localStorage.getItem('accessToken');
 
-            const response = await axios.post('http://127.0.0.1:8000/api/v1/stock/', formData, {
+            const response = await axios.post(`${import.meta.env.VITE_SERVER}/stock/`, formData, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }
