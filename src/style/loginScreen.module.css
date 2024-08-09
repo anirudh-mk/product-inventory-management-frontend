@@ -34,3 +34,15 @@
 .headding {
     padding-bottom: 50px;
 }
+
+.error {
+    padding-top: 10px;
+    color: tomato;
+    font-size: 14px;
+    text-align: center;
+}
+
+.loginCard button:hover {
+    cursor: pointer;
+    background-color: rgb(35, 35, 35);
+}
