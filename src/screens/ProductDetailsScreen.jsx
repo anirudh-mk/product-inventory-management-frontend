@@ -4,8 +4,12 @@ import { useParams } from 'react-router-dom';
 import style from '../style/productDetailsScreen.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+
 
 function ProductDetailsScreen() {
+
+    const navigate = useNavigate();
 
     const { id } = useParams();
 
@@ -62,7 +66,7 @@ function ProductDetailsScreen() {
                 ) : (
                     <p>No variants available</p>
                 )}
-                <div className={style.createCard}>
+                <div className={style.createCard} onClick={() => navigate(`create`)}>
                     <FontAwesomeIcon icon={faPlus} />
                 </div>
             </div>
