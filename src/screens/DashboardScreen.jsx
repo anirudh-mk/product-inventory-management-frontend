@@ -14,7 +14,7 @@ function DashboardScreen() {
                     <Route path="products" element={<ProductScreen />} />
                     <Route path='products/:id' element={<ProductDetailsScreen />} />
                     <Route path='products/create' element={<ProductCreateScreen />} />
-                    <Route path='products/:id/create' element={<StockCreateScreen />} />
+                    <Route path='products/:id/create/:productId' element={<StockCreateScreen />} />
                 </Routes>
             </Sidebar>
         </>

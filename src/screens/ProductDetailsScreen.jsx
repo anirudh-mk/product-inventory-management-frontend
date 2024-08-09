@@ -66,7 +66,7 @@ function ProductDetailsScreen() {
                 ) : (
                     <p>No variants available</p>
                 )}
-                <div className={style.createCard} onClick={() => navigate(`create`)}>
+                <div className={style.createCard} onClick={() => navigate(`create/${response.id}`)}>
                     <FontAwesomeIcon icon={faPlus} />
                 </div>
             </div>
