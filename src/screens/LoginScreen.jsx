@@ -17,7 +17,9 @@ function LoginScreen() {
         })
             .then(function (response) {
                 const accessToken = response.data.accessToken;
+                const accessExpiry = response.data.accessExpiry
                 localStorage.setItem('accessToken', accessToken);
+                localStorage.setItem('expiry', accessExpiry)
                 navigate('/dashboard/products');
             })
             .catch(function (error) {

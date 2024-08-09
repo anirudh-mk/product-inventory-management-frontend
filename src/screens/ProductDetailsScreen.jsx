@@ -5,21 +5,16 @@ import style from '../style/productDetailsScreen.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-
+import { format } from 'date-fns';
 
 function ProductDetailsScreen() {
 
     const navigate = useNavigate();
-
     const { id } = useParams();
-
-    const [response, setResponse] = useState([])
-
+    const [response, setResponse] = useState({});
 
     useEffect(() => {
-
         const accessToken = localStorage.getItem('accessToken');
-
         axios.get(`http://127.0.0.1:8000/api/v1/product/${id}/`, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
@@ -30,10 +25,8 @@ function ProductDetailsScreen() {
             })
             .catch(function (error) {
                 console.log(error);
-            })
-            .finally(function () {
             });
-    }, [])
+    }, [id]);
 
     return (
         <div>
@@ -43,9 +36,8 @@ function ProductDetailsScreen() {
                     <h2>{response.ProductName}</h2>
                     <p>Id: {response.ProductID}</p>
                     <p>Code: {response.ProductCode}</p>
-                    <p>Created Date: {response.CreatedDate}</p>
-                    <p>Upadated Date: {response.UpdatedDate ? response.UpdatedDate : 'None'}</p>
-                    <p>Created User: {response.CreatedUser}</p>
+                    <p>Created Date: {response.CreatedDate ? format(new Date(response.CreatedDate), 'yyyy-MM-dd') : 'None'}</p>
+                    <p>Updated Date: {response.UpdatedDate ? format(new Date(response.UpdatedDate), 'yyyy-MM-dd') : 'None'}</p>
                     <p>Is Favourite: {response.IsFavourite ? response.IsFavourite : 'None'}</p>
                     <p>HSN Code: {response.HSNCode ? response.HSNCode : 'None'}</p>
                     <p>Total Stock: {response.TotalStock}</p>
@@ -71,7 +63,7 @@ function ProductDetailsScreen() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default ProductDetailsScreen
+export default ProductDetailsScreen;

@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import style from '../style/productCreateScreen.module.css'
+import style from '../style/productCreateScreen.module.css';
 
 const ProductCreateScreen = () => {
-
     const navigate = useNavigate();
 
     const [product, setProduct] = useState({
         ProductID: '',
         ProductCode: '',
         ProductName: '',
-        CreatedUser: '',
         IsFavourite: false,
         Active: false,
         HSNCode: '',
@@ -117,7 +115,7 @@ const ProductCreateScreen = () => {
                     'Authorization': `Bearer ${accessToken}`
                 }
             });
-            navigate(-1)
+            navigate(-1);
             setErrors({});
         } catch (error) {
             if (error.response && error.response.data) {
@@ -166,18 +164,8 @@ const ProductCreateScreen = () => {
                                 />
                                 {errors.ProductName && <p className={style.error}>{errors.ProductName.join(', ')}</p>}
                             </div>
-                            <div>
-                                <p>Created User</p>
-                                <input
-                                    type="text"
-                                    name="CreatedUser"
-                                    value={product.CreatedUser}
-                                    onChange={handleInputChange}
-                                />
-                                {errors.CreatedUser && <p className={style.error}>{errors.CreatedUser.join(', ')}</p>}
-                            </div>
                         </div>
-                        <div >
+                        <div>
                             <div className={style.checkbox}>
                                 <input
                                     type="checkbox"
@@ -205,7 +193,6 @@ const ProductCreateScreen = () => {
                                     onChange={handleInputChange}
                                 />
                             </div>
-
                             <div>
                                 <p>Total Stock</p>
                                 <input
@@ -256,7 +243,6 @@ const ProductCreateScreen = () => {
                 </form>
             </div>
         </div>
-
     );
 };
 
