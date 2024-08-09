@@ -1,35 +1,41 @@
-.createContainer {
-    padding-top: 70px;
+.productCreateScreen {
+    margin-top: 70px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 40px;
 }
 
-.topContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.card {
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px 5px rgba(0, 0, 0, 0.1);
 }
 
-.option {
-    display: flex;
-    gap: 10px;
-}
-
-.option:hover {
-    cursor: pointer;
-}
-
-.container {
+.inputs {
     display: flex;
     gap: 30px;
 }
 
-.button {
-    margin-top: 20px;
+.checkbox {
+    display: flex;
+    gap: 10px;
 }
 
-.variant {
-    padding-top: 20px;
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.error {
+    color: tomato;
+    font-size: 12px;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.options {
+    display: flex;
+    margin: 20px 0;
 }
