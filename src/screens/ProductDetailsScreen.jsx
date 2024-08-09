@@ -10,9 +10,17 @@ function ProductDetailsScreen() {
     const { id } = useParams();
 
     const [response, setResponse] = useState([])
-    console.log(response);
+
+
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/v1/product/${id}/`)
+
+        const accessToken = localStorage.getItem('accessToken');
+
+        axios.get(`http://127.0.0.1:8000/api/v1/product/${id}/`, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        })
             .then(function (response) {
                 setResponse(response.data)
             })

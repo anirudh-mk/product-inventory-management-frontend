@@ -12,8 +12,15 @@ function ProductScreen() {
     const [response, setResponse] = useState([])
     const [page, setPage] = useState(1)
     const [pageCount, setPageCount] = useState()
+
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/api/v1/product/?page=${page}`)
+        const accessToken = localStorage.getItem('accessToken');
+
+        axios.get(`http://127.0.0.1:8000/api/v1/product/?page=${page}`, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        })
             .then(function (response) {
                 setResponse(response.data.response)
                 setPageCount(response.data.pages)
@@ -38,7 +45,7 @@ function ProductScreen() {
                     </div>
                 )
             }
-            <button onClick={() => setPage(page - 1)} disabled={page === 1}>previos</button>
+            <button onClick={() => setPage(page - 1)} disabled={page === 1}>previous</button>
 
             <button onClick={() => setPage(page + 1)} disabled={page === pageCount}>next</button>
 
