@@ -10,18 +10,20 @@ function ProductScreen() {
     const navigate = useNavigate();
 
     const [response, setResponse] = useState([])
-
+    const [page, setPage] = useState(1)
+    const [pageCount, setPageCount] = useState()
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/v1/product/')
+        axios.get(`http://127.0.0.1:8000/api/v1/product/?page=${page}`)
             .then(function (response) {
-                setResponse(response.data)
+                setResponse(response.data.response)
+                setPageCount(response.data.pages)
             })
             .catch(function (error) {
                 console.log(error);
             })
             .finally(function () {
             });
-    }, [])
+    }, [page])
 
 
     return (
@@ -36,6 +38,10 @@ function ProductScreen() {
                     </div>
                 )
             }
+            <button onClick={() => setPage(page - 1)} disabled={page === 1}>previos</button>
+
+            <button onClick={() => setPage(page + 1)} disabled={page === pageCount}>next</button>
+
             <div className={style.createButton} onClick={() => navigate('/dashboard/products/create')}>
                 <FontAwesomeIcon icon={faPlus} />
             </div>
